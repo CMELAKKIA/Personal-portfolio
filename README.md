@@ -1,2 +1,2 @@
 # Personal-portfolio
-![alt text](https://github.com/CMELAKKIA/Personal-portfolio/images/to/Capture.JPG)
+![alt text](https://github.com/CMELAKKIA/images/Capture.JPG)
