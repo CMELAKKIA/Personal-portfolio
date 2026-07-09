@@ -592,8 +592,6 @@ p {
 
 #about{
     display: flex;
-    position: relative;
-    right: 150px;
     margin-top: 80px;
     margin-bottom: 100px;
 }
@@ -621,10 +619,7 @@ p {
 }
 
 .about .skills {
-    position: relative;
-    left: 150px;
     margin-bottom: 30px;
-  
 }
 
 .about .skill-name {
