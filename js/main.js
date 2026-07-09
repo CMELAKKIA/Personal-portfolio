@@ -47,7 +47,7 @@
             
             $('html, body').animate({
                 scrollTop: $(this.hash).offset().top - 45
-            }, 1500, 'easeInOutExpo');
+            }, 400, 'easeInOutExpo');
             
             if ($(this).parents('.navbar-nav').length) {
                 $('.navbar-nav .active').removeClass('active');
@@ -57,15 +57,20 @@
     });
     
     
-    // Typed Initiate
-    if ($('.hero .hero-text h2').length == 1) {
-        var typed_strings = $('.hero .hero-text .typed-text').text();
-        var typed = new Typed('.hero .hero-text h2', {
+    // Typed Initiate - Enhanced with rotating complete titles
+    if ($('.hero-title-container .hero-title').length == 1) {
+        var typed_strings = $('.hero-title-container .typed-text').text();
+        var typed = new Typed('.hero-title-container .hero-title', {
             strings: typed_strings.split(', '),
-            typeSpeed: 100,
-            backSpeed: 20,
-            smartBackspace: false,
-            loop: true
+            typeSpeed: 80,
+            backSpeed: 60,
+            backDelay: 1500,
+            startDelay: 500,
+            smartBackspace: true,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|',
+            attr: null
         });
     }
     
@@ -73,7 +78,8 @@
     // Skills
     $('.skills').waypoint(function () {
         $('.progress .progress-bar').each(function () {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
+            var percent = $(this).attr('data-progress') || $(this).attr('aria-valuenow') || '0';
+            $(this).css('width', percent + '%');
         });
     }, {offset: '80%'});
 
