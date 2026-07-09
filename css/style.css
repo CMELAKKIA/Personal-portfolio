@@ -1,4 +1,23 @@
 /*******************************/
+/****** CSS Variables **********/
+/*******************************/
+:root {
+    --primary-color: #505AC9;
+    --accent-color: #E73550;
+    --light-bg: #F5F5F5;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --text-light: rgba(255, 255, 255, 0.9);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.25);
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --border-radius: 12px;
+}
+
+/*******************************/
 /********* General CSS *********/
 /*******************************/
 body {
@@ -245,13 +264,16 @@ a:focus {
 .hero {
     position: relative;
     width: 100%;
-    margin-bottom: 45px;
-    padding: 210px 0 0 0;
+    margin-bottom: 60px;
+    padding: 100px 30px 80px 30px;
     overflow: hidden;
-    background: linear-gradient(rgba(70, 78, 184, .93), rgba(70, 78, 184, .93)), url(../img/hero-bg.jpg);
+    background: linear-gradient(135deg, rgba(70, 78, 184, .95) 0%, rgba(86, 94, 200, .95) 100%), url(../img/hero-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
 }
 
 .hero .container-fluid {
@@ -260,18 +282,33 @@ a:focus {
 
 .hero .hero-image {
     position: relative;
-    text-align: right;
-    padding-right: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
 }
 
 .hero .hero-image img {
-    max-width: 80%;
-    max-height: 80%;
+    width: min(350px, 80vw);
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero .hero-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
 }
 
 .hero .hero-content {
     position: relative;
-    padding-left: 137px;
+    padding-left: 60px;
+    padding-right: 40px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -280,26 +317,28 @@ a:focus {
 
 .hero .hero-text p {
     color: #ffffff;
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 12px;
 }
 
 .hero .hero-text h1 {
     color: #ffffff;
-    font-size: 60px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    line-height: 1.1;
 }
 
 .hero .hero-text h2 {
     display: inline-block;
     margin: 0;
-    height: 35px;
-    color: #ffffff;
-    font-size: 35px;
+    min-height: 40px;
+    color: #E8F0FE;
+    font-size: 28px;
     font-weight: 600;
+    line-height: 1.3;
 }
 
 .hero .hero-text .typed-text {
@@ -313,11 +352,11 @@ a:focus {
 }
 
 .hero .hero-btn .btn {
-    margin-top: 35px;
+    margin-top: 20px;
     color: #E73550;
     background: #ffffff;
     box-shadow: inset 0 0 0 50px #ffffff;
-}
+}}
 
 .hero .hero-btn .btn:hover {
     color: #ffffff;
@@ -326,17 +365,90 @@ a:focus {
     border-color: #ffffff;
 }
 
-.hero .hero-btn .btn:first-child {
-    margin-right: 10px;
+.hero .hero-btn {
+    margin-top: 20px;
+}
+
+.hero .footer-social {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.hero .footer-social a {
+    color: #ffffff;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+/***Section Headers & Spacing***/
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-header p {
+    color: #E73550;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.section-header h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #505AC9;
+    margin-bottom: 0;
+}
+
+.about {
+    padding: 70px 0;
+}
+
+.service {
+    padding: 70px 0;
+    background: #f8f9fa;
+}
+
+.experience {
+    padding: 70px 0;
+}
+
+.portfolio {
+    padding: 70px 0;
+}
+
+.blog {
+    padding: 70px 0;
+}
+
+.footer {
+    padding: 50px 0;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 @media (max-width: 991.98px) {
     .hero {
-        padding-top: 60px;
+        padding: 80px 20px 60px 20px;
+        min-height: auto;
     }
     
     .hero .hero-content {
-        padding: 0 15px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero .hero-image {
+        margin-top: 24px;
+    }
+
+    .hero .hero-image img {
+        width: min(300px, 80vw);
     }
     
     .hero .hero-text p {
