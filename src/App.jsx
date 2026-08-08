@@ -79,27 +79,27 @@ const certifications = [
 ]
 
 const certificationVisuals = [
-  { title: 'AWS SAA Certification', src: '/aws-saa.png' },
-  { title: 'AWS Cloud Practitioner', src: '/AWS.PNG' },
-  { title: 'Azure Fundamentals', src: '/AzureFundamentals.png' },
-  { title: 'Azure AI Fundamentals', src: '/AzureAI.png' },
+  { title: 'AWS SAA Certification', src: 'aws-saa.png' },
+  { title: 'AWS Cloud Practitioner', src: 'AWS.PNG' },
+  { title: 'Azure Fundamentals', src: 'AzureFundamentals.png' },
+  { title: 'Azure AI Fundamentals', src: 'AzureAI.png' },
 ]
 
 const articles = [
   {
     title: 'How To Design Flat Shading Graphics Using P5.js',
     url: 'https://www.geeksforgeeks.org/how-to-design-flat-shading-graphics-using-p5-js/',
-    image: '/gfg.jpg',
+    image: 'gfg.jpg',
   },
   {
     title: 'How To Design Phong Shading Graphics Using P5.js',
     url: 'https://www.geeksforgeeks.org/how-to-design-phong-shading-graphics-using-p5-js/',
-    image: '/gfg.jpg',
+    image: 'gfg.jpg',
   },
   {
     title: "Open Source Journey With GSSOC'21",
     url: 'https://cmelakkia.medium.com/my-opensource-contribution-journey-with-gssoc-d3f09f73b7a1',
-    image: '/medium.jpg',
+    image: 'medium.jpg',
   },
 ]
 
@@ -144,7 +144,7 @@ function App() {
           <div className="orb orb-b"></div>
           <div className="portrait-wrap">
             <img
-              src="/elakkia_pic.jpg"
+              src="elakkia_pic.jpg"
               alt="CM Elakkia profile"
               className="hero-portrait"
             />
